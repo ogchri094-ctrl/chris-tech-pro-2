@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChrisTech</title>
+
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- REMIX ICONS -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container-header">
+    <a href="#" class="logo">ChrisTech</a>
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#" class="nav-link">Inicio</a></li>
+        <li><a href="stock.html" class="nav-link">iPhones</a></li>
+        <li><a href="agendar.html" class="nav-link">Agendar</a></li>
+        <li><a href="#" class="nav-link">Referencias</a></li>
+        <li><a href="#" class="nav-link">Envíos</a></li>
+        <li><a href="#" class="nav-link">Accesorios</a></li>
+        <li><a href="#" class="nav-link">Contacto</a></li>
+        <li><a href="#" class="btn-ofertas">Ofertas</a></li>
+      </ul>
+    </nav>
+
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+
+
+
+<section class="seccion1">
+  <div class="iphones">
+    <h2>iPhones al mejor precio</h2>
+    <p>Equipos nuevos y seminuevos con garantía. Entrega rápida y pago seguro.</p>
+    <a href="stock.html" class="btn-hero">Ver iPhones</a>
+  </div>
+  <div class="iphones-img">
+    <img src="Iphones Stock.jpg" alt="iPhones">
+  </div>
+</section>
+
+
+
+
+
+<section class="compra-segura">
+    <h2>Compra fácil, rápida y segura</h2>
+    <div class="slider">
+        <div class="slide-track">
+            <div class="item"><i class="ri-shield-check-line"></i> Pago seguro</div>
+            <div class="item"><i class="ri-truck-line"></i> Envíos a todo México</div>
+            <div class="item"><i class="ri-award-line"></i> Garantía incluida</div>
+            <div class="item"><i class="ri-smartphone-line"></i> Equipos originales</div>
+            <div class="item"><i class="ri-flashlight-line"></i> Entrega rápida</div>
+            <!-- DUPLICADO PARA LOOP -->
+            <div class="item"><i class="ri-shield-check-line"></i> Pago seguro</div>
+            <div class="item"><i class="ri-truck-line"></i> Envíos a todo México</div>
+            <div class="item"><i class="ri-award-line"></i> Garantía incluida</div>
+            <div class="item"><i class="ri-smartphone-line"></i> Equipos originales</div>
+            <div class="item"><i class="ri-flashlight-line"></i> Entrega rápida</div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="tienda">
+  <h2 class="titulo">iPhones Trending</h2>
+  <div id="cartasContainerLanding" class="carousel-container">
+    <!-- Aquí se cargarán las cartas desde Firebase -->
+  </div>
+</section>
+
+
+
+<section class="video-iphone">
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="videoIphone.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+  </video>
+  <div class="overlay"></div>
+  <div class="video-content">
+    <h2>iStore</h2>
+    <p>Conoce nuestros equipos y descubre la experiencia premium</p>
+    <a href="#tienda" class="btn-hero">Ver Productos</a>
+  </div>
+</section>
+
+
+
+<section class="stats-carrusel">
+  <div class="carousel-container" id="statsCarousel">
+    <!-- Tarjetas existentes -->
+    <div class="stat-card">
+      <div class="icon">⭐</div>
+      <h3>100 Clientes Satisfechos</h3>
+      <p>Nuestros clientes confían en nosotros y aman sus equipos.</p>
+    </div>
+    <div class="stat-card">
+      <div class="icon">📱</div>
+      <h3>+120 iPhones Vendidos</h3>
+      <p>Equipos originales entregados a tiempo y con garantía.</p>
+    </div>
+    <div class="stat-card">
+      <div class="icon">🌟</div>
+      <h3>5 Estrellas</h3>
+      <p>Excelencia en servicio y soporte postventa.</p>
+    </div>
+    
+    <!-- Nuevas tarjetas -->
+    <div class="stat-card">
+      <div class="icon">🚀</div>
+      <h3>Envío Exprés</h3>
+      <p>Recibe tu iPhone en tiempo récord, sin complicaciones.</p>
+    </div>
+    <div class="stat-card">
+      <div class="icon">💎</div>
+      <h3>Garantía Extendida</h3>
+      <p>Protege tu equipo con nuestra garantía premium.</p>
+    </div>
+    <div class="stat-card">
+      <div class="icon">📞</div>
+      <h3>Soporte 24/7</h3>
+      <p>Asistencia inmediata para cualquier duda o problema.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Aquí irían tus secciones: seccion3, video-iphone, seccion4, testimonios, faq, contacto y footer -->
+<!-- Para no hacer demasiado largo, las dejamos iguales a tu HTML previo -->
+
+<!-- JS Firebase y carga dinámica -->
+
+<script>
+const menuToggle = document.getElementById('menu-toggle');
+const navList = document.querySelector('.nav-list');
+const header = document.getElementById('header');
+
+menuToggle.addEventListener('click', () => {
+  navList.classList.toggle('show');
+  menuToggle.classList.toggle('open');
+});
+
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 50){
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+
+</script>
+
+
+<script>
+const slider = document.getElementById('cartasContainerLanding');
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+// Para PC - Mouse
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+
+slider.addEventListener('mousemove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 2; // velocidad del scroll
+  slider.scrollLeft = scrollLeft - walk;
+});
+
+// Para móviles - Touch
+slider.addEventListener('touchstart', (e) => {
+  isDown = true;
+  startX = e.touches[0].pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+
+slider.addEventListener('touchend', () => {
+  isDown = false;
+});
+
+slider.addEventListener('touchmove', (e) => {
+  if(!isDown) return;
+  const x = e.touches[0].pageX - slider.offsetLeft;
+  const walk = (x - startX) * 2; // velocidad del scroll
+  slider.scrollLeft = scrollLeft - walk;
+});
+</script>
+
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
+
+// Config Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyCHti6mA1gh-3M38XpjnFFGTLcxFPEJnQg",
+  authDomain: "chris-landing.firebaseapp.com",
+  projectId: "chris-landing",
+  storageBucket: "chris-landing.firebasestorage.app",
+  messagingSenderId: "343277009357",
+  appId: "1:343277009357:web:570ebe5fe4431119adec84"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Cargar productos desde Firestore
+async function cargarProductos() {
+  const container = document.getElementById('cartasContainerLanding');
+  container.innerHTML = '';
+
+  const querySnapshot = await getDocs(collection(db, "iphones"));
+  querySnapshot.forEach((doc) => {
+    const data = doc.data();
+    const card = document.createElement('div');
+    card.classList.add('carta');
+    card.dataset.categoria = data.categoria;
+
+    card.innerHTML = `
+      <div class="img-container"><img src="${data.img}" alt="${data.nombre}"></div>
+      <div class="info">
+        <div class="nombre">${data.nombre}</div>
+        <div class="precio">${data.precio}</div>
+        <div class="disponible">${data.disponible}</div>
+        <div class="botones">
+          <a class="btn comprar">Comprar</a>
+          <a class="btn agendar">Agendar</a>
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+cargarProductos();
+
+// Filtros
+const filtros = document.querySelectorAll('.filtros button');
+filtros.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const cat = btn.dataset.filter;
+    document.querySelectorAll('.carta').forEach(carta => {
+      carta.style.display = (cat === "all" || carta.dataset.categoria === cat) ? 'block' : 'none';
+    });
+  });
+});
+
+</script>
+
+<script>
+  const statsCarousel = document.getElementById('statsCarousel');
+let isDownStats = false, startXStats, scrollLeftStats;
+
+statsCarousel.addEventListener('mousedown', (e) => {
+  isDownStats = true;
+  statsCarousel.classList.add('active');
+  startXStats = e.pageX - statsCarousel.offsetLeft;
+  scrollLeftStats = statsCarousel.scrollLeft;
+});
+statsCarousel.addEventListener('mouseleave', () => isDownStats = false);
+statsCarousel.addEventListener('mouseup', () => isDownStats = false);
+statsCarousel.addEventListener('mousemove', (e) => {
+  if(!isDownStats) return;
+  e.preventDefault();
+  const x = e.pageX - statsCarousel.offsetLeft;
+  const walk = (x - startXStats) * 2;
+  statsCarousel.scrollLeft = scrollLeftStats - walk;
+});
+
+// TOUCH
+statsCarousel.addEventListener('touchstart', (e) => {
+  isDownStats = true;
+  startXStats = e.touches[0].pageX - statsCarousel.offsetLeft;
+  scrollLeftStats = statsCarousel.scrollLeft;
+});
+statsCarousel.addEventListener('touchend', () => isDownStats = false);
+statsCarousel.addEventListener('touchmove', (e) => {
+  if(!isDownStats) return;
+  const x = e.touches[0].pageX - statsCarousel.offsetLeft;
+  const walk = (x - startXStats) * 2;
+  statsCarousel.scrollLeft = scrollLeftStats - walk;
+});
+</script>
+
+</body>
+</html>
